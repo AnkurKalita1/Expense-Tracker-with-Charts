@@ -26,8 +26,8 @@ const App = () => {
 
     <div className='app'>
         <h1> Expanse Tracker</h1>
-        <TransactionForm/>
-        <TransactionList/>
+        <TransactionForm onAdd={addTransaction}/>
+        <TransactionList transactions={transactions}/>
         <ChartComponent/>
         <Stats/>
     </div>

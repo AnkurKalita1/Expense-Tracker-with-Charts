@@ -1,9 +1,13 @@
 import React from 'react'
 
-const TransactionList = () => {
+const TransactionList = ({transactions}) => {
   return (
     <div>
-      TransactionList
+       {transactions.map((t , index)=> (
+        <li key={index}>
+          {t.type} - ${t.amount} - {t.desc} - {t.date.toString()}
+        </li>
+       ))}
     </div>
   )
 }
