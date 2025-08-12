@@ -1,5 +1,9 @@
 import React from 'react'
 import {useState , useEffect} from 'react'
+import TransactionForm from './components/TransactionForm'
+import TransactionList from './components/TransactionList'
+import ChartComponent from './components/ChartComponent'
+import Stats from './components/Stats'
 const App = () => {
   const [transactions , setTransactions ] = useState([])
 
@@ -22,6 +26,10 @@ const App = () => {
 
     <div className='app'>
         <h1> Expanse Tracker</h1>
+        <TransactionForm/>
+        <TransactionList/>
+        <ChartComponent/>
+        <Stats/>
     </div>
   )
 }
