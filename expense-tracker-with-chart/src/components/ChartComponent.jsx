@@ -1,8 +1,7 @@
 import React from 'react'
 import { Chart as ChartJS } from "chart.js/auto"
 import {Doughnut} from "react-chartjs-2"
-const ChartComponent = (props) => {
-  let transactions = props.transactions
+const ChartComponent = ({transactions }) => {
   let expenses = transactions.filter(expense => expense.type === "expense")
   
   const categoryTotals = expenses.reduce((acc, t) => {

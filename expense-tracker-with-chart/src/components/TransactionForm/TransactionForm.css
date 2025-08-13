@@ -1,11 +1,12 @@
 .TransactionForm {
   max-width: 90vw;
   background-color: #F0F8FF;  
-   margin: 50px 5%;
+   margin: 20px 5%;
    padding: 50px 5%; 
    display: flex;
    gap: 50px;
    border-radius: 15px;
+   justify-content: center;
    
 }
 
