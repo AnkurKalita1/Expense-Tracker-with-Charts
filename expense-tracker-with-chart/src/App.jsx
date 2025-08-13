@@ -5,7 +5,10 @@ import TransactionList from './components/TransactionList'
 import ChartComponent from './components/ChartComponent'
 import Stats from './components/Stats'
 const App = () => {
-  const [transactions , setTransactions ] = useState([])
+  const [transactions, setTransactions] = useState(() => {
+    const saved = localStorage.getItem("transactions")
+    return saved? JSON.parse(saved):[]
+  })
 
 
   useEffect(()=>{
