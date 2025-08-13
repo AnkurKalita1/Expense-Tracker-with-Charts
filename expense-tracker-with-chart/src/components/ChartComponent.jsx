@@ -25,7 +25,6 @@ const ChartComponent = (props) => {
                 '#36A2EB',
                 '#FFCE56',
                 '#4BC0C0'
-
               ]
             }
           ]
