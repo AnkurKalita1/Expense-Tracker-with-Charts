@@ -26,9 +26,8 @@ const handleSubmit = (e)=>{
       <input type="text" value={desc} onChange={(e) => setDesc(e.target.value)} placeholder='Description' />
       <select value={category} onChange={(e) => setCategory(e.target.value)}>
         <option value="">Select Category</option>
-        <option value="Salary">Salary</option>
         <option value="Food">Food</option>
-        <option value="Shopping">Shopping</option>
+        <option value="Bills">Bills</option>
         <option value="Transport">Transport</option>
         <option value="Other">Other</option>
       </select>

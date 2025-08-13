@@ -31,7 +31,7 @@ const App = () => {
         <h1> Expanse Tracker</h1>
         <TransactionForm onAdd={addTransaction}/>
         <TransactionList transactions={transactions}/>
-        <ChartComponent/>
+      <ChartComponent transactions={transactions} />
       <Stats />
       
     </div>
