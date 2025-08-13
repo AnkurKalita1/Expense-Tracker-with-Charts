@@ -1,9 +1,10 @@
 import React from 'react'
 import {useState , useEffect} from 'react'
-import TransactionForm from './components/TransactionForm'
-import TransactionList from './components/TransactionList'
+import TransactionForm from './components/TransactionForm/TransactionForm'
+import TransactionList from './components/TansactionList/TransactionList'
 import ChartComponent from './components/ChartComponent'
-import Stats from './components/Stats'
+import Stats from './components/states/Stats'
+import "./app.css"
 const App = () => {
   const [transactions , setTransactions ] = useState([])
 
@@ -29,8 +30,7 @@ const App = () => {
         <TransactionForm onAdd={addTransaction}/>
         <TransactionList transactions={transactions}/>
         <ChartComponent/>
-      <Stats />
-      
+        <Stats/>
     </div>
   )
 }

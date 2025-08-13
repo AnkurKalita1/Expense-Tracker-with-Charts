@@ -1,0 +1,18 @@
+.stats{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+}
+
+.stats p{
+    border: 1px solid rgb(220, 220, 220);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    border-radius: 3px;
+    background-color: white;
+    color: #1589d2;
+    padding: 50px;
+    border-radius: 10px;
+
+}
