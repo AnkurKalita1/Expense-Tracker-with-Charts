@@ -29,7 +29,8 @@ const App = () => {
         <TransactionForm onAdd={addTransaction}/>
         <TransactionList transactions={transactions}/>
         <ChartComponent/>
-        <Stats/>
+      <Stats />
+      
     </div>
   )
 }
