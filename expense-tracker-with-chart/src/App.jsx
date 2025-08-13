@@ -6,7 +6,10 @@ import ChartComponent from './components/ChartComponent'
 import Stats from './components/states/Stats'
 import "./app.css"
 const App = () => {
-  const [transactions , setTransactions ] = useState([])
+  const [transactions, setTransactions] = useState(() => {
+    const saved = localStorage.getItem("transactions")
+    return saved? JSON.parse(saved):[]
+  })
 
 
   useEffect(()=>{
@@ -30,7 +33,8 @@ const App = () => {
         <TransactionForm onAdd={addTransaction}/>
         <TransactionList transactions={transactions}/>
         <ChartComponent/>
-        <Stats/>
+      <Stats />
+      
     </div>
   )
 }
