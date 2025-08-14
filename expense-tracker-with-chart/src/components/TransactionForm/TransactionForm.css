@@ -1,13 +1,49 @@
-.TransactionForm {
-  max-width: 90vw;
-  background-color: #F0F8FF;  
-   margin: 20px 5%;
-   padding: 50px 5%; 
-   display: flex;
-   gap: 50px;
-   border-radius: 15px;
-   justify-content: center;
-   
+
+    .TransactionForm {
+        max-width: 90vw;
+        background-color: #F0F8FF;  
+         margin: 20px 5%;
+         padding: 50px 5%; 
+         display: flex;
+         gap: 50px;
+         border-radius: 15px;
+         justify-content: center;
+         outline: none;
+         
+      
+}
+@media (max-width:1024px) {
+    .TransactionForm {
+    max-width: 85vw;
+    width: 100%;
+    gap: 20px;
+    margin: 10px 2%;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    }
+}
+
+
+@media (max-width:768px) {
+    .TransactionForm {
+    max-width: 85vw;
+    width: 100%;
+    gap: 20px;
+    margin: 10px 2%;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    }
+}
+
+@media (max-width:480px){
+    .TransactionForm {
+        max-width: 90vw;
+        width: 100%;
+        gap: 20px;
+        margin: 10px 3%;
+        display: grid;
+        grid-template-columns: 2fr;
+        }
 }
 
 .input, .btn{

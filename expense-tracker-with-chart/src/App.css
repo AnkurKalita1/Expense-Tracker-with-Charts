@@ -5,10 +5,128 @@ body{
 
 .app h1{
     text-align: start;
-    
     font-size: 35px;
     font-family: Arial, Helvetica, sans-serif;
      margin: 40px 5%;
 }
+
+.charts{
+    width: 100vw;
+}
+
+
+
+.Records{
+    display: flex;
+    margin: 60px 5%;
+    background: white;
+    text-align: start;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+    padding: 30px 5%;
+    border-radius: 10px;
+
+}
+
+
+.Expense_filter , .TransactionList {
+    padding: 50px;
+    margin: 20px;
+    font-size: "sf pro" ,sans-serif;
+}
+.Expense_filter{
+    background-color: #90D5FF;
+    border-radius: 10px;
+}
+ .Expense_filter select{
+    color: #90D5FF;
+    font-size: 20px;
+    padding: 15px;
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    outline: none;
+    margin: 20px;
+    display: flex;
+    width: 90px;
+    font-size: "sf pro" ,sans-serif
+    
+}
+.Expense_filter label{
+    border: none;
+    font-family: "TEXT" ,sans-serif ;
+    color: white;
+    font-size: 20px;
+    padding: 15px 5px;
+    margin: 30px 0;
+
+}
+.TransactionList{
+    border: 1px solid rgb(220, 220, 220);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    border-radius: 3px;
+    background-color: #90D5FF;
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+
+}
+
+.TransactionList li{
+  margin: 20px;
+}
+.TransactionList li span{
+    color: #1589d2;
+    font-weight: 700;
+}
+
+@media (max-width:1024px) {
+
+    .Records{
+        display: grid;
+        grid-template-columns:2fr 2fr ;
+        gap: 20px;
+        padding: 30px 10%;
+        margin: 50px 5%;
+        }
+}
+@media (max-width:768px) {
+    .Records{
+    display: grid;
+    grid-template-columns: 2fr ;
+    gap: 20px;
+    padding: 30px 10%;
+    margin: 50px 5%;
+    }
+ 
+}
+@media (max-width:576px) {
+    .Records{
+        display: grid;
+        grid-template-columns: 2fr ;
+        gap: 20px;
+        width: 95vw;
+        padding: 30px 2%;
+        margin: 50px 0%;
+        
+        }
+    
+}
+
+@media (max-width:480px) {
+    .Records{
+    display: grid;
+    grid-template-columns: 2fr ;
+    gap: 20px;
+    width: 95vw;
+    padding: 30px 2%;
+    margin: 50px 1%;
+    
+    }
+
+   
+}
+
 
 

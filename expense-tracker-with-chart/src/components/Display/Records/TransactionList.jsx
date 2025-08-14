@@ -3,10 +3,10 @@ import React from 'react'
 const TransactionList = ({filteredData}) => {
 
   return (
-    <div>
+    <div className='TransactionList'>
        {filteredData.map((t , index)=> (
         <li key={index}>
-           {t.type} - {t.amount} - {t.desc} - {t.category } {t.date.toString()}
+           {t.type} -  <span>{t.amount} </span>-{t.desc}  - {t.category } {t.date.toString()}
         </li>
        ))}
     </div>
