@@ -9,6 +9,18 @@
    justify-content: center;
    
 }
+/* @media (max-width: 576px)  {
+    .TransactionForm{
+        max-width: 70vw;
+        display: block;
+        padding: 50px ;
+        margin:20px
+    }
+    .input,.btn,.type_select input{
+        margin: 15px;
+        padding: 30px;
+    }
+} */
 
 .input, .btn{
     padding: 10px 15px;    outline: none;
@@ -32,4 +44,5 @@
         color: #1589d2;
         
 }
+
 
