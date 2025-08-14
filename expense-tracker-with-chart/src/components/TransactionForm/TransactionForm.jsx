@@ -26,7 +26,6 @@ const handleSubmit = (e)=>{
         <option value="food" > Food</option>
         <option value="travel"> Travel</option>
         <option value="bills"> Bills</option>
-        <option value="shopping"> Shopping</option>
         <option value="other"> Others</option>
 
      </select>
