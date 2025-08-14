@@ -7,7 +7,11 @@ import Display from './components/Display/Display'
 const App = () => {
   const [transactions, setTransactions] = useState(() => {
     const saved = localStorage.getItem("transactions")
-    return saved? JSON.parse(saved):[]
+    if(!saved) return []
+    return JSON.parse(saved).map(s => ({
+      ...s,
+      date:new Date(s.date)
+    }))
   })
 
 
@@ -29,8 +33,7 @@ const App = () => {
 
     <div className='app'>
         <h1> Expanse Tracker</h1>
-        <TransactionForm onAdd={addTransaction}/>
-        {/* <TransactionList transactions={transactions}/> */}
+      <TransactionForm onAdd={addTransaction}/>
       <Stats transactions={transactions}/>
       <Display transactions={transactions} />
       

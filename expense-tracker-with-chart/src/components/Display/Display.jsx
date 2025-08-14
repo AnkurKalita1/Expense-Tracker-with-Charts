@@ -6,7 +6,7 @@ const Display = ({transactions}) => {
   return (
     <div className='Display'>
       <ChartComponent transactions={transactions}/>
-      <Records/>
+      <Records transactions={transactions} />
     </div>
   )
 }
