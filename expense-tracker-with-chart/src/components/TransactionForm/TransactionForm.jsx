@@ -4,12 +4,13 @@ const TransactionForm = ({onAdd}) => {
 const [ type, setType] = useState("income")
 const [amount,setAmount] = useState("")
 const [desc,setDesc] = useState("")
-const [category,setCategory] =useState("")
+const [category, setCategory] = useState("")
+const [date,setDate]=useState("")  
 
 const handleSubmit = (e)=>{
    e.preventDefault()
    if(!amount) return ;
-   onAdd({type , amount:parseFloat(amount) , desc ,category, date:new Date()})
+   onAdd({type , amount:parseFloat(amount) , desc ,category, date})
    setAmount("")
   setDesc("")
   setCategory("")
@@ -22,14 +23,15 @@ const handleSubmit = (e)=>{
      </select>
 
     <input type="number" value={amount} onChange={(e)=> setAmount(e.target.value)} placeholder='Amount'/>
-    <select value={category} onChange={(e)=>setCategory(e.target.value)} className='type_select input'>
+      <select value={category} onChange={(e) => setCategory(e.target.value)} className='type_select input'>
+        <option value="">Choose</option>
         <option value="food" > Food</option>
         <option value="travel"> Travel</option>
         <option value="bills"> Bills</option>
         <option value="other"> Others</option>
-
      </select>
-    <input type="text" value={desc} onChange={(e)=>setDesc(e.target.value)} placeholder='Description'/>
+      <input type="text" value={desc} onChange={(e) => setDesc(e.target.value)} placeholder='Description' />
+      <input type="date" value={date} onChange={(e)=>setDate(e.target.value)} />
     <button type='submit' className='btn'> Add</button>
     </form>
   )

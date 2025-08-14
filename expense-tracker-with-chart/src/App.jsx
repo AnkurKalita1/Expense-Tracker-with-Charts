@@ -1,15 +1,17 @@
 import React from 'react'
 import {useState , useEffect} from 'react'
+import "./App.css"
 import TransactionForm from './components/TransactionForm/TransactionForm'
-import TransactionList from './components/TansactionList/TransactionList'
-import ChartComponent from './components/Display/ChartComponent'
-import Stats from './components/states/Stats'
-import "./app.css"
+import Stats from './components/stats/Stats'
 import Display from './components/Display/Display'
 const App = () => {
   const [transactions, setTransactions] = useState(() => {
     const saved = localStorage.getItem("transactions")
-    return saved? JSON.parse(saved):[]
+    if(!saved) return []
+    return JSON.parse(saved).map(s => ({
+      ...s,
+      date:new Date(s.date)
+    }))
   })
 
 
@@ -31,8 +33,7 @@ const App = () => {
 
     <div className='app'>
         <h1> Expanse Tracker</h1>
-        <TransactionForm onAdd={addTransaction}/>
-        {/* <TransactionList transactions={transactions}/> */}
+      <TransactionForm onAdd={addTransaction}/>
       <Stats transactions={transactions}/>
       <ChartComponent transactions={transactions}/>
       <Records/>

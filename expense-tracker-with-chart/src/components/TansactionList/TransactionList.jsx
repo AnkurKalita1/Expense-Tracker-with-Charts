@@ -1,12 +1,12 @@
 import React from 'react'
 
-const TransactionList = ({transactions}) => {
+const TransactionList = ({filteredData}) => {
 
   return (
     <div>
-       {transactions.map((t , index)=> (
+       {filteredData.map((t , index)=> (
         <li key={index}>
-          {t.type} - {t.amount} - {t.desc} - {t.date.toString()}
+           {t.type} - {t.amount} - {t.desc} - {t.category } {t.date.toString()}
         </li>
        ))}
     </div>
