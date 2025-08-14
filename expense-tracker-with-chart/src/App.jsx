@@ -2,9 +2,10 @@ import React from 'react'
 import {useState , useEffect} from 'react'
 import TransactionForm from './components/TransactionForm/TransactionForm'
 import TransactionList from './components/TansactionList/TransactionList'
-import ChartComponent from './components/ChartComponent'
+import ChartComponent from './components/Display/ChartComponent'
 import Stats from './components/states/Stats'
 import "./app.css"
+import Display from './components/Display/Display'
 const App = () => {
   const [transactions, setTransactions] = useState(() => {
     const saved = localStorage.getItem("transactions")
@@ -33,8 +34,7 @@ const App = () => {
         <TransactionForm onAdd={addTransaction}/>
         {/* <TransactionList transactions={transactions}/> */}
       <Stats transactions={transactions}/>
-      <ChartComponent transactions={transactions}/>
-
+      <Display transactions={transactions} />
       
     </div>
   )
