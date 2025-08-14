@@ -11,7 +11,7 @@ const ChartComponent = ({transactions }) => {
   const labels = Object.keys(categoryTotals)
   const dataValues=Object.values(categoryTotals)
   return (
-    <div className='doughnut-chart' style={{ width: "300px", height: "300px", margin: "0 auto" }}>
+    <div className='doughnut-chart charts' style={{ width: "300px", height: "300px", margin: "0 auto" }}>
       <Doughnut
         data={{
           labels: labels,

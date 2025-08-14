@@ -8,13 +8,13 @@ const ExpenseFilter = (props) => {
         props.onChangeFilter(props.selectedYear, event.target.value)
     }
     return (
-        <div>
+        <div className="Expense_filter">
             <label htmlFor="">Filter: </label>
             <select value={props.selectedYear} onChange={yearChangeHandler} style={{padding:"3px", margin:"5px"}}>
+                
                 <option value="2023">2023</option>
                 <option value="2024">2024</option>
                 <option value="2025">2025</option>
-                <option value="2026">2026</option>
             </select> 
             <select value={props.selectedMonth} onChange={monthChangeHandler} style={{ padding: "3px", margin: "5px" }}>
                 <option value="">All Months</option>

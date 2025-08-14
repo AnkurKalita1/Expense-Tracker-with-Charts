@@ -3,7 +3,8 @@ import {useState , useEffect} from 'react'
 import "./App.css"
 import TransactionForm from './components/TransactionForm/TransactionForm'
 import Stats from './components/stats/Stats'
-import Display from './components/Display/Display'
+import ChartComponent from './components/Display/ChartComponent'
+import Records from './components/Display/Records/Records'
 const App = () => {
   const [transactions, setTransactions] = useState(() => {
     const saved = localStorage.getItem("transactions")
@@ -29,14 +30,17 @@ const App = () => {
    setTransactions([...transactions, transaction])
   }
 
+
   return (
 
     <div className='app'>
         <h1> Expanse Tracker</h1>
       <TransactionForm onAdd={addTransaction}/>
       <Stats transactions={transactions}/>
-      <Display transactions={transactions} />
-      
+      <ChartComponent transactions={transactions}/>
+
+          <Records allTransactions={transactions}/>
+
     </div>
   )
 }

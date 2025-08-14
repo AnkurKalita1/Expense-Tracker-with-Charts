@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import ExpenseFilter from '../ExpenseFilter/ExpenseFilter';
-import TransactionList from '../TansactionList/TransactionList';
-import ChartComponent from './ChartComponent';
-const Records = (props) => {
+import ExpenseFilter from '../../ExpenseFilter/ExpenseFilter';
+import TransactionList from './TransactionList';
+import ChartComponent from '../ChartComponent';
+const Records = ({allTransactions}) => {
   const months=["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"]
-  const allTransactions = props.transactions;
   const onlyExpenses = allTransactions.filter(exp => exp.type === "expense")
    
-  const [filteredYear, setFilteredYear] = useState('2023')
+  const [filteredYear, setFilteredYear] = useState('2025')
   const [filteredMonth, setFilteredMonth] = useState("")
+
   const changeFilterHandler = (selectedYear,selectedMonth) => {
     setFilteredYear(selectedYear)
     setFilteredMonth(selectedMonth)
@@ -25,10 +25,15 @@ const Records = (props) => {
     )
   })
   return (
+  
     <>
+    <div className='Records'>
     <ExpenseFilter selectedYear={filteredYear} selectedMonth={filteredMonth} onChangeFilter={changeFilterHandler} />
-      <TransactionList filteredData={filteredExpenses} />
-      <ChartComponent transactions={filteredExpenses}/>
+    
+    <TransactionList filteredData={filteredExpenses} />
+    <ChartComponent transactions={filteredExpenses}/>
+    </div>
+   
     </>
   )
 }
