@@ -1,45 +1,42 @@
 import React from 'react'
-import {useState , useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import "./App.css"
 import TransactionForm from './components/TransactionForm/TransactionForm'
-import Stats from './components/stats/Stats'
-import ChartComponent from './components/Display/ChartComponent'
+import StatsAndChart from './components/Display/Records/StatsAndCharts'
 import Records from './components/Display/Records/Records'
 const App = () => {
   const [transactions, setTransactions] = useState(() => {
     const saved = localStorage.getItem("transactions")
-    if(!saved) return []
+    if (!saved) return []
     return JSON.parse(saved).map(s => ({
       ...s,
-      date:new Date(s.date)
+      date: new Date(s.date)
     }))
   })
 
 
-  useEffect(()=>{
+  useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("transactions")) || []
     setTransactions(saved)
-  },[])
+  }, [])
 
 
-  useEffect(()=>{
-     localStorage.setItem("transactions", JSON.stringify(transactions))
-  },[transactions]) ;
+  useEffect(() => {
+    localStorage.setItem("transactions", JSON.stringify(transactions))
+  }, [transactions]);
 
-  const addTransaction = (transaction)=>{
-   setTransactions([...transactions, transaction])
+  const addTransaction = (transaction) => {
+    setTransactions([...transactions, transaction])
   }
 
 
   return (
 
     <div className='app'>
-        <h1> Expanse Tracker</h1>
-      <TransactionForm onAdd={addTransaction}/>
-      <Stats transactions={transactions}/>
-      <ChartComponent transactions={transactions}/>
-
-          <Records allTransactions={transactions}/>
+      <h1> Expanse Tracker</h1>
+      <StatsAndChart transactions={transactions } />
+      <TransactionForm onAdd={addTransaction} />
+      <Records allTransactions={transactions} />
 
     </div>
   )

@@ -86,9 +86,21 @@ body{
     .Records{
         display: grid;
         grid-template-columns:2fr 2fr ;
-        gap: 20px;
+        gap: 25px;
         padding: 30px 10%;
         margin: 50px 5%;
+        }
+       
+        .statsAndCharts {
+            display: flex;
+            gap:6rem;
+            margin: 30px auto;
+           
+        }
+    
+        .doughnut-chart {
+            padding-left: 7%;
+            margin-left: auto;
         }
 }
 @media (max-width:768px) {
@@ -98,6 +110,19 @@ body{
     gap: 20px;
     padding: 30px 10%;
     margin: 50px 5%;
+    }
+     .statsAndCharts {
+     display: flex;
+     grid-template-columns: 2fr 2fr;
+     gap: 1px;
+     margin: 30px auto;
+    }
+        
+    .doughnut-chart {
+    display: flex;
+    margin-top: 30px;
+    padding-top: 10%;
+
     }
  
 }
@@ -109,8 +134,21 @@ body{
         width: 95vw;
         padding: 30px 2%;
         margin: 50px 0%;
+
+    }
+     .statsAndCharts {
+      display: block !important;
+      grid-template-columns: 2fr 2fr;
+      gap: 5px;
+      margin: 30px auto ;
+      padding-right: 10px ;
+     }
         
-        }
+      .doughnut-chart {
+       display: block;
+       margin-top: 30px;
+       padding: 10%;
+     }
     
 }
 
@@ -122,11 +160,26 @@ body{
     width: 95vw;
     padding: 30px 2%;
     margin: 50px 1%;
-    
     }
-
+        .statsAndCharts {
+            display: block !important;
+            grid-template-columns: 2fr 2fr;
+            gap: 10px;
+            margin: 30px auto;
+            /* padding: ; */
+        }
+    
+        .doughnut-chart {
+            display: block;
+            margin-top: 30px;
+            padding-top: 30%;
+        }
    
 }
+.statsAndCharts{
+    display: flex;
+}
 
-
-
+.doughnut-chart{
+    padding-bottom: 3%;
+}
